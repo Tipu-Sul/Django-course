@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div class='bg-secondary'>
+    <div><h1 class='text-center fw-bolder text-white'>OUR STORY</h1></div>
+    <H5 class='p-3'>Everything we do with our customer choice . 
+        We also serve seafood items. We maintain the
+         customers choice since 1996.We have priority about customers
+        . Don't lose your chance to enjoy a delicious food.</H5>
+    
+</div>
+<div class='row'>
+    <div class='col-md-6'>
+        <img src="{% static 'Images/about.jpeg' %}" class='w-100 h-100' alt="about service">
+    </div>
+    <div class='col-md-6 text-center text-danger bg-black'>
+        <h1 class='text-center'>We are providing  world class customer service</h1>
+    </div>
+</div>
+
+{% endblock  %}

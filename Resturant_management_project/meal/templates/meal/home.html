@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div class='row bg-success'>
+  <div class='col-sm-6 justify-content-around m-auto p-5'>
+      <h6 class='text-bg-warning'>Hello Everyone !</h6>
+      <h5 class='text-bg-warning'>Come to our Resturant</h5>
+    <h1 class='text-danger fw-bolder'>And enjoy your favourite food</h1>
+    <h6 class='text-warning'>With cheaper rate</h6>
+  </div> 
+  <div class='col-sm-6 justify-content-center m-auto p-1'>
+   <img src=" {% static 'homepage_img.jpeg' %}" class='w-100 h-100' alt="homepage Image">
+  </div> 
+</div>
+
+{% endblock  %}
