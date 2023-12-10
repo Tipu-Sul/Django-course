@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+
+
+
+{% block content %}
+
+<div class="row bg-primary-subtle"style='width:90%; margin:auto'>
+    {% for val in data %}
+    <div class="col-sm-4 mb-3 mb-sm-0">
+      <div class="card mt-2 bg-info-subtle">
+        <div class="card-body">
+          <h6 class="card-title">ID:{{val.id}}</h6>
+          {% for j in val.title.all %}
+            <p class="card-text">Assign Date : {{j.TaskAsaignDate}}</p>
+            <p class="card-text">Task Description : {{j.taskDecision}}</p>
+            <p class="card-text">Task Category : {{val.categoryName}}</p>
+            <p class="card-text">
+              {% if j.isCompleted %}
+                  'Completed'
+              {% else %}
+                  <a class='btn' href="{% url 'edit_task' val.id %}">Edit</a>
+                  <a class='btn' href="{% url 'delete_task' val.id %}">Delete</a>
+              {% endif %}
+            </p>
+          
+          {% endfor %}
+    
+    
+        </div>
+      </div>
+    </div> 
+    {% endfor %}  
+</div>
+
+{% endblock  %}

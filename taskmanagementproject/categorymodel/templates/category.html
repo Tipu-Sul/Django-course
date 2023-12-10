@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="bg-danger-subtle">
+    <form method="post" style='width:50%; margin:auto'class='bg-primary-subtle'>
+        {% csrf_token %}
+       
+           <h1>Category Model task page</h1>
+       
+           {{data | crispy }}
+       
+           <button class='btn btn-primary'>Submit</button>
+       </form>
+       
+</div>
+{% endblock  %}
