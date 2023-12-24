@@ -1,0 +1,55 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<div class="row d-flex flex-warp align-items-center m-auto">
+  <div class="col-sm-6 text-center">
+    <h1 class="text-success">Welcome to our car sale center</h1>
+    <h5 class="text-danger">
+      We are providing the world class car sale service
+    </h5>
+    <p class="text-primary">
+      Come to us and get your dream car with a affortable price and world class
+      after sale service
+    </p>
+  </div>
+  <div class="col-sm-6">
+    <img src="{% static 'front-image-2.webp' %}" alt="" />
+  </div>
+</div>
+<br />
+
+
+
+ 
+<div class="text-center">
+  {% for i in brand %}
+  <button class="mx-3 text-decoration-none "><a href="{% url 'brand_wise_car' i.slug %}">{{i.brand_name}}</a></button>
+  {% endfor %}
+  <button><a href="{% url 'home' %}">All</a></button>
+</div>
+
+
+<br />
+
+<div>
+  <h3 class="border border-box border-2 mx-5  text-center" style="background-color:#4a6ae9">{{ data | length }} Car Found</h3>
+</div>
+
+<div class="row d-flex flex-wrap" style="width: 90%; margin: auto">
+  {% for car in data %}
+  <div
+    class="card col-lg-4 col-md-4 col-sm-12 m-1 bg-success-subtle"
+    style="width: 20rem"
+  >
+    <img src="{{car.car_image.url}}" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">Car Name : {{car.car_name}}</h5>
+      <h5 class="card-title">Car Price : {{car.car_price}}</h5>
+      <h5 class="card-title">
+        Car Brand Name : {{car.car_brand_name.brand_name}}
+      </h5>
+      <a href="{% url 'detail' car.id %}" class="btn btn-primary">View Details</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

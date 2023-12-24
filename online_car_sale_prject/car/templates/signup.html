@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+{% if messages %} {%for mess in messages %}
+<h5 class="bg-warning text-center">{{ mess }}</h5>
+{% endfor %} {% endif %}
+<br />
+
+
+<form method="post" style="width: 50%; margin: auto;">
+{% csrf_token  %}
+<h1>{{type}} Page</h1>
+{{form | crispy}}
+
+<button class="btn btn-info" type="submit">Submit</button>
+</form>
+
+
+
+{% endblock  %}
