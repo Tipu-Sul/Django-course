@@ -21,7 +21,7 @@ class UserAddress(models.Model):
     user=models.OneToOneField(User,related_name='address',on_delete=models.CASCADE)
     street_address=models.CharField(max_length=100)
     city=models.CharField(max_length=50)
-    postal_code=models.IntegerField(max_length=10)
+    postal_code=models.IntegerField()
     country=models.CharField(max_length=100)
     def __str__(self):
         return str(self.user.email)
